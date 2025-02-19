@@ -1,0 +1,511 @@
+body{
+    box-sizing: border-box;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgb(254,188,251);
+    background: linear-gradient(90deg, rgba(254,188,251,1) 0%, rgba(249,192,255,1) 46%, rgba(255,255,255,1) 100%);
+}
+.navbar{
+    width: 100%;
+    height: 9vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content:space-between;
+    padding:0px 60px;
+    background-color: rgb(55, 55, 55);
+
+}
+.navoptions{
+    
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+    font-weight: 550;
+    font-family: monospace;
+    font-style: normal;
+    color: white;
+}
+.navlinks{
+    padding: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+#about:hover{
+    border: 2px solid white;
+    
+}
+#features:hover{
+    border: 2px solid white;
+    
+}#blog:hover{
+    border: 2px solid white;
+    
+}#pricing:hover{
+    border: 2px solid white;
+    
+}
+
+*{
+    padding: 0;
+    margin: 0;
+
+    box-sizing: border-box;
+
+}
+#gamesync-logo{
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+}
+.logo{
+    width: 250px;
+    height: 100px;
+    font-family: "Ubuntu", serif;
+    font-weight: 700;
+    font-style: normal;
+    display: flex;
+    align-items: center;
+    font-size: 30px ;
+    color: white;
+}
+    
+a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    display: inline-block;
+}
+#contactButton{
+    border: 2px solid black;
+    padding: 3px 10px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+    font-family: "Ubuntu", serif;
+    font-weight: 700;
+    font-style: normal;
+    color: rgb(68, 0, 146);
+    background-color: rgb(255, 255, 255);
+     
+}
+#contactButton{
+    display: inline-block;
+}
+.leftbutton:hover #contactButton{
+    transform: scale(1.1);
+    transition-duration: 200ms;
+    background-color: rgb(144, 115, 202);
+    
+}
+
+.menuButton{
+    position: absolute;
+    right: 30px;
+    ;
+}
+#menu{
+    width: 30px;
+    height: 30px;
+    display: none;
+}
+
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            height: 100vh;
+            margin: 0;
+            background-image: url(worldmap.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .container {
+            width: 90%;
+            height: 90vh;
+            display: flex;
+            padding: 5px;
+        }
+        .left {
+            background-color: rgb(218, 218, 218);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 70%;
+            height: 100%;
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            border: 5px solid black;
+        }
+        #map {
+            height: 40rem;
+            transition: transform 0.3s ease;
+            transform-origin: center center;
+            z-index: 1;
+            
+        
+        }
+        .right {
+            
+            width: 30%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: start;
+            justify-content: space-around;
+        }
+        .info{
+            width: 80%;
+            height: 50%;
+            box-shadow: 0 0 2px 2px black;
+            background-color: rgb(255, 255, 255);
+            border-radius: 5px;
+            font-size: 20px;
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            text-align: start;
+            padding: 25px;
+            justify-content: space-evenly;
+
+            
+        }
+        ol{
+            list-style: decimal;
+            
+            width: 100%;
+           
+        }
+        #view-button{
+            color: rgb(255, 255, 255);
+            border: 1px solid rgb(0, 0, 0);
+            background-color: rgb(104, 104, 194);
+            width: 25%;
+            height: 15%;
+            border-radius: 5px;
+        }
+        #view-button:hover{
+            transform: scale(1.2);
+        }
+        .buttons {
+            width: 100%;
+            height: 10%;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+        a {
+            text-decoration: none;
+            /* border: 2px solid black;
+            border-radius: 5px; */
+            padding: 10px;
+            color: rgb(255, 255, 255);
+            font-weight: bold;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            /* background-color: white; */
+            /* box-shadow: 0 0 10px black; */
+        }
+        a:hover{
+            background-color: rgba(131, 164, 255, 0.826);
+        }
+        .cityinfo {
+            font-size: 60px;
+            text-align: center;
+            font-weight: bold;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+        }
+        h1 {
+            font-size: 80px;
+            color: white;
+            text-shadow: 5px 5px 50px black;
+        }
+        
+        .pipe-container{
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            z-index: 1000;
+            overflow: hidden;
+            visibility: hidden;
+        }
+
+        .pipe{
+            background-color: rgb(60, 195, 253);
+            width: 6px;
+            height: 100px;
+            font-size: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 px 2px black;
+        } 
+        #pipe1{
+            rotate: 120deg;
+            position: relative;
+            left: 40px;
+            bottom: 10px;
+            height: 230px;
+        } 
+        #pipe2{
+            rotate: 40deg;
+            position: relative;
+            bottom: 220px;
+            left: 90px;
+            height: 110px;
+        }
+        #pipe3{
+            rotate: 110deg;
+            height: 130px;
+            position: relative;
+            bottom: 350px;
+            left: 180px;
+        }
+        #pipe4{
+            rotate: 50deg;
+            height: 130px;
+            position: relative;
+            bottom: 420px;
+            left: 190px;
+        }
+        #pipe5{
+            rotate: 40deg;
+            height: 100px;
+            position: relative;
+            bottom: 500px;
+            left: 25px;
+        }
+        #pipe6{
+            rotate: 110deg;
+            height: 90px;
+            position: relative;
+            bottom: 520px;
+            left: 30px;
+        }
+        #pipe7{
+            rotate: 40deg;
+            height: 120px;
+            position: relative;
+            bottom: 650px;
+            left: 100px;
+        }
+        #pipe8{
+            rotate: 25deg;
+            height: 190px;
+            position: relative;
+            bottom: 680px;
+            left: 30px;
+        }
+        #pipe9{
+            rotate: 105deg;
+            height: 400px;
+            position: relative;
+            bottom: 1180px;
+            left: 420px;
+        }
+        #pipe10{
+            rotate: 105deg;
+            height: 450px;
+            position: relative;
+            bottom: 1540px;
+            left: 390px;
+        }
+        #pipe11{
+            rotate: 170deg;
+            height: 200px;
+            position: relative;
+            bottom: 1805px;
+            left: 270px;
+        }
+        #pipe12{
+            rotate: 115deg;
+            height: 250px;
+            position: relative;
+            bottom: 1985px;
+            left: 180px;
+        }
+        #pipe13{
+            rotate: 100deg;
+            height: 300px;
+            position: relative;
+            bottom: 2185px;
+            left: 430px;
+        }
+        #pipe14{
+            rotate: 10deg;
+            height: 230px;
+            position: relative;
+            bottom: 2540px;
+            left: 590px;
+            width: 4px;
+
+        }
+        #pipe15{
+            rotate: 25deg;
+            height: 260px;
+            position: relative;
+            bottom: 2560px;
+            left: 520px;
+            width: 4px;
+
+        }
+        #pipe16{
+            rotate: 40deg;
+            height: 240px;
+            position: relative;
+            bottom: 2850px;
+            left: 370px;
+        }
+        #pipe17{
+            rotate: 25deg;
+            height: 180px;
+            position: relative;
+            bottom: 3100px;
+            left: 250px;
+        }
+        #pipe18{
+            rotate: 25deg;
+            height: 180px;
+            position: relative;
+            bottom: 3330px;
+            left: 150px;
+        }
+        #pipe19{
+            rotate: 115deg;
+            height: 250px;
+            position: relative;
+            bottom: 3460px;
+            left: 110px;
+        }
+        #pipe20{
+            rotate: 125deg;
+            height: 190px;
+            position: relative;
+            bottom: 3575px;
+            left: 295px;
+        }
+        #pipe21{
+            rotate: 90deg;
+            height: 100px;
+            position: relative;
+            bottom: 3670px;
+            left:420px;
+        }
+        #pipe22{
+            rotate: 100deg;
+            height: 140px;
+            position: relative;
+            bottom: 3890px;
+            left:590px;
+            width: 4px;
+
+        }
+        #pipe23{
+            rotate: 120deg;
+            height: 170px;
+            position: relative;
+            bottom: 4125px;
+            left:640px;
+            width: 4px;
+
+        }
+        #pipe24{
+            rotate: 100deg;
+            height: 190px;
+            position: relative;
+            bottom: 4415px;
+            left:680px;
+            width: 4px;
+
+        }
+        #pipe25{
+            rotate: 105deg;
+            width: 4px;
+            height: 380px;
+            position: relative;
+            bottom: 4802px;
+            left:790px;
+        }
+        #pipe26{
+            rotate: 10deg;
+            height:220px;
+            position: relative;
+            bottom: 4990px;
+            left:780px;
+            width: 4px;
+
+        }
+        #pipe27{
+            rotate: 50deg;
+            height:140px;
+            position: relative;
+            bottom: 5020px;
+            left:710px;
+            width: 4px;
+
+        }
+        #pipe28{
+            rotate: 100deg;
+            height:180px;
+            position: relative;
+            bottom: 5310px;
+            left:860px;
+        }
+        #pipe29{
+            rotate: 100deg;
+            height:190px;
+            position: relative;
+            bottom: 5400px;
+            left:860px;
+        }
+        #pipe30{
+            rotate: 140deg;
+            height:240px;
+            position: relative;
+            bottom: 5490px;
+            left:790px;
+            width: 4px;
+
+        }
+        #pipe31{
+            rotate: 160deg;
+            height:150px;
+            position: relative;
+            bottom: 5660px;
+            left:680px;
+            width: 4px;
+
+        }
+        .pipelines.active {
+            background-color: #4CAF50;
+            color: white;
+        
+        }
+        
+        
+        .area1, .area2, .area3, .area4, .area5, 
+        .area6, .area7, .area8, .area9, .area10 {
+            
+            transition: box-shadow 0.3s ease;
+            cursor: pointer;
+            
+        }
+        .glow {
+            box-shadow: 0 0 2px 2px rgb(255, 96, 149);
+        }
+
+
+
+
+
+
+
+    
