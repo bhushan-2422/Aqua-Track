@@ -502,3 +502,125 @@ body {
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
+
+
+.area-name{
+    position: absolute;
+    font-size: 12px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: rgb(49, 13, 83);
+    color: white;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.miraj{
+    z-index: 1;
+    right: 90%;
+    top: 12%;
+}
+.ganpati-mandir{
+    z-index: 1000;
+    right: 88%;
+    top: 30%;
+}
+.sphurti-chowk{
+    z-index: 1000;
+    right: 75%;
+    top: 11%;
+}
+.wce-campus{
+    z-index: 1000;
+    right: 83%;
+    top: 57%;
+}
+.vijaynagar{
+    z-index: 1000;
+    right: 75%;
+    top: 22%;
+}
+.rajvada{
+    z-index: 1000;
+    right: 75%;
+    top: 52%;
+}
+.gov-colony{
+    z-index: 1000;
+    right: 43%;
+    top: 47%;
+}
+.vishrambag{
+    z-index: 1000;
+    right: 55%;
+    top: 54%;
+}
+.ftroad{
+    z-index: 1000;
+    right: 48%;
+    top: 72%;
+}
+.gayatri-nagar{
+    z-index: 1000;
+    right: 35%;
+    top: 55%;
+}
+
+/*animations*/
+.left{
+    animation-name: slide-from-left;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+@keyframes slide-from-left{
+    0%{
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+   
+}
+.area-name{
+    animation-name: keep-hidden;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+@keyframes keep-hidden{
+    0%{
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+   
+}
+.right{
+    animation-name: slide-from-right;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+@keyframes slide-from-right{
+    0%{
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+   
+}
