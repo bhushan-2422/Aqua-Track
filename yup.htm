@@ -37,15 +37,35 @@
     
     <div class="causes">
         <h3>Causes of Damage</h3>
-        <ul>
-            <li><strong>High Pressure:</strong>Due to high pressure of Water pipe is damaged. </li>
-            <li><strong>Thickness:</strong> The Thickness of pipe is very less.</li>
-            <li><strong>High Pressure:</strong> Excessive water pressure damages the pipeline.</li>
-        </ul>
+        <ol class="slist1">
+            
+        </ol>
         
         <div class="button">
         <a href="page4 chatgpt.html" target="_blank"><button class="checkout-btn">Checkout</button></div></a>
     </div>
+
+    <script>
+        // Load list items automatically from localStorage
+        window.onload = function () {
+            let storedData = localStorage.getItem("listData");
+
+            if (storedData) {
+                let itemsArray = JSON.parse(storedData);
+                let list = document.querySelector(".slist1");
+
+                itemsArray.forEach(itemText => {
+                    let li = document.createElement("li");
+                    li.innerText = itemText;
+                    list.appendChild(li);
+                });
+
+                console.log("List loaded from localStorage");
+            } else {
+                console.log("No data found in localStorage");
+            }
+        };
+    </script>
 
 </body>
 </html>

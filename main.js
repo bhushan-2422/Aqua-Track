@@ -106,9 +106,10 @@ function updateLists() {
 
         areaElements.forEach(pipe => {
             if (!added) {
-                if (getLife(pipe) === 5 && !listContainsText(list, "Pipe is 9 years old")) {
+                if (getLife(pipe) === 5 && !listContainsText(list, "Aged Pipeline:The pipeline was damaged primarily due to its age. Over time, the materials used in the pipeline structure weakened, leading to corrosion, rust buildup, and structural")) 
+                    {
                     const li = document.createElement("li");
-                    li.textContent = "Pipe is 9 years old";
+                    li.textContent = "Aged Pipeline:The pipeline was damaged primarily due to its age. Over time, the materials used in the pipeline structure weakened, leading to corrosion, rust buildup, and structural";
                     list.appendChild(li);
                 }
                 if (getThickness(pipe) === 3 && !listContainsText(list, "Thickness is less")) {
@@ -117,16 +118,16 @@ function updateLists() {
                     list.appendChild(li);
                 }
                 if (getJoints(pipe) > 0) {
-                    const text = `Number of edges are ${getJoints(pipe)}`;
+                    const text = `Joints: There are ${getJoints(pipe)} number of joints present in these area which leads to corrosion and rust.`;
                     if (!listContainsText(list, text)) {
                         const li = document.createElement("li");
                         li.textContent = text;
                         list.appendChild(li);
                     }
                 }
-                if (isInFarmland(pipe) === 3 && !listContainsText(list, "Placed on agriculture land")) {
+                if (isInFarmland(pipe) === 3 && !listContainsText(list, "Farm: The pipeline is situated on a agriculture land due to pesticides used in agriculture the material of pipe is damaged.")) {
                     const li = document.createElement("li");
-                    li.textContent = "Placed on agriculture land";
+                    li.textContent = "Farm: The pipeline is situated on a agriculture land due to pesticides used in agriculture the material of pipe is damaged.";
                     list.appendChild(li);
                 }
                 if (isNearTank(pipe) === 3 && !listContainsText(list, "Placed near tank area")) {
@@ -347,5 +348,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+//transfer data
+// Save list items automatically to localStorage
+window.onload = function () {
+    let listItems = document.querySelectorAll(".list1 li");
+    let itemsArray = [];
 
+    listItems.forEach(item => {
+        itemsArray.push(item.innerText);
+    });
+
+    localStorage.setItem("listData", JSON.stringify(itemsArray));
+    console.log("List saved to localStorage");
+};
 

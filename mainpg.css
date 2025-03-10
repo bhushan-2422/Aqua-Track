@@ -47,7 +47,8 @@ body {
     justify-content: space-around;
 }
 .info{
-    width: 60%;
+    
+    width: 80%;
     height: 35%;
     /* background-color: rgb(25, 11, 59); */
     border-radius: 5px;
@@ -623,4 +624,9 @@ body {
         transform: translateX(0);
     }
    
+}
+
+.info  div{
+    font-size: 15px;
+    padding-right: 100px;
 }
