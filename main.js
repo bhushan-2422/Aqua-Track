@@ -20,6 +20,7 @@ function getLife(pipe) {
     const manufactureDate = new Date(pipe.getAttribute('data-manufacture-date'));
     const currentDate = new Date();
     const diff = currentDate.getFullYear() - manufactureDate.getFullYear();
+    
 
     if (diff > 8) return 5;
     if (diff > 5) return 3;
@@ -53,6 +54,7 @@ function isPlastic(pipe) {
     return pipe.classList.contains('plastic') ? 3 : 0;
 }
 
+
 // Apply Color Based on Condition
 function applyConditionColor(life, thickness, joints, farmland, neartank, plastic, pipe) {
     const sum = life + thickness + joints + farmland + neartank + plastic;
@@ -67,6 +69,9 @@ function applyConditionColor(life, thickness, joints, farmland, neartank, plasti
         pipe.style.backgroundColor = 'green';
     }
 }
+
+
+
 
 // Evaluate All Pipes
 function evaluatePipes() {
@@ -84,6 +89,76 @@ function evaluatePipes() {
 }
 
 evaluatePipes();
+
+//update card lists
+ // Function to check if an <li> with the same text already exists in a list
+function listContainsText(list, text) {
+    return Array.from(list.children).some(li => li.textContent === text);
+}
+
+// Function to update each list dynamically
+function updateLists() {
+    for (let i = 1; i <= 10; i++) {
+        const list = document.querySelector(`.list${i}`); // Select the corresponding list
+        const areaElements = document.querySelectorAll(`.area${i}`); // Select corresponding divs
+
+        let added = false; // Ensure only one entry per area group
+
+        areaElements.forEach(pipe => {
+            if (!added) {
+                if (getLife(pipe) === 5 && !listContainsText(list, "Pipe is 9 years old")) {
+                    const li = document.createElement("li");
+                    li.textContent = "Pipe is 9 years old";
+                    list.appendChild(li);
+                }
+                if (getThickness(pipe) === 3 && !listContainsText(list, "Thickness is less")) {
+                    const li = document.createElement("li");
+                    li.textContent = "Thickness is less";
+                    list.appendChild(li);
+                }
+                if (getJoints(pipe) > 0) {
+                    const text = `Number of edges are ${getJoints(pipe)}`;
+                    if (!listContainsText(list, text)) {
+                        const li = document.createElement("li");
+                        li.textContent = text;
+                        list.appendChild(li);
+                    }
+                }
+                if (isInFarmland(pipe) === 3 && !listContainsText(list, "Placed on agriculture land")) {
+                    const li = document.createElement("li");
+                    li.textContent = "Placed on agriculture land";
+                    list.appendChild(li);
+                }
+                if (isNearTank(pipe) === 3 && !listContainsText(list, "Placed near tank area")) {
+                    const li = document.createElement("li");
+                    li.textContent = "Placed near tank area";
+                    list.appendChild(li);
+                }
+                if (isPlastic(pipe) === 3 && !listContainsText(list, "Material is plastic")) {
+                    const li = document.createElement("li");
+                    li.textContent = "Material is plastic";
+                    list.appendChild(li);
+                }
+
+                added = true; // Stop further appending for multiple divs in the same group
+            }
+        });
+    }
+}
+
+// Call the function to update all lists
+updateLists();
+
+
+
+
+
+
+
+
+
+
+
 
 
 // // Select all area classes from 1 to 10
@@ -269,3 +344,8 @@ document.addEventListener("DOMContentLoaded", function () {
         createStar();
     }
 });
+
+
+
+
+
