@@ -172,3 +172,100 @@ let activeClass = null; // Track the currently glowing class
         // Click anywhere outside to remove all glows
         document.addEventListener('click', removeAllGlows);
     
+
+
+//cards visibility code
+document.addEventListener("DOMContentLoaded", function () {
+    // Select all area elements
+    const areas = {};
+    for (let i = 1; i <= 10; i++) {
+        areas[`area${i}`] = document.querySelectorAll(`.area${i}`);
+    }
+    
+    // Select the card elements
+    const cards = {};
+    for (let i = 1; i <= 10; i++) {
+        cards[`card${i}`] = document.querySelector(`.card${i}`);
+        if (cards[`card${i}`]) {
+            cards[`card${i}`].style.display = "none";
+        }
+    }
+
+    // Function to hide all cards
+    function hideCards() {
+        for (let i = 1; i <= 10; i++) {
+            if (cards[`card${i}`]) {
+                cards[`card${i}`].style.display = "none";
+            }
+        }
+    }
+
+    // Add event listeners to each area group
+    for (let i = 1; i <= 10; i++) {
+        if (areas[`area${i}`]) {
+            areas[`area${i}`].forEach(element => {
+                element.addEventListener("click", function () {
+                    hideCards(); // Hide all cards first
+                    if (cards[`card${i}`]) {
+                        cards[`card${i}`].style.display = "block"; // Show the corresponding card
+                    }
+                });
+            });
+        }
+    }
+});
+
+
+//star bg
+document.addEventListener("DOMContentLoaded", function () {
+    const starContainer = document.querySelector(".stars");
+    const numStars = 100;
+    let mouseX = window.innerWidth / 2;
+    let mouseY = window.innerHeight / 2;
+
+    // Track mouse movement
+    document.addEventListener("mousemove", (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+    });
+
+    function createStar() {
+        const star = document.createElement("div");
+        star.classList.add("star");
+
+        // Random position
+        let startX = Math.random() * window.innerWidth;
+        let startY = Math.random() * window.innerHeight;
+        star.style.left = `${startX}px`;
+        star.style.top = `${startY}px`;
+
+        // Random size
+        let size = Math.random() * 5 + 3; // Between 3px and 8px
+        star.style.width = `${size}px`;
+        star.style.height = `${size}px`;
+
+        // Random color
+        const colors = ["#ff0000", "#00ff00", "#0000ff", "#ffff00", "#ff00ff", "#00ffff", "#ffffff"];
+        let randomColor = colors[Math.floor(Math.random() * colors.length)];
+        star.style.backgroundColor = randomColor;
+        star.style.boxShadow = `0 0 15px ${randomColor}`;
+
+        // Random movement animation
+        star.style.animation = `randomMovement ${Math.random() * 5 + 3}s infinite alternate ease-in-out`;
+
+        starContainer.appendChild(star);
+
+        function moveStarWithCursor() {
+            let dx = (mouseX - startX) * 0.02; // Small movement factor
+            let dy = (mouseY - startY) * 0.02;
+            star.style.transform = `translate(${dx}px, ${dy}px)`;
+            requestAnimationFrame(moveStarWithCursor);
+        }
+        moveStarWithCursor();
+    }
+
+    // Create multiple stars
+    for (let i = 0; i < numStars; i++) {
+        createStar();
+    }
+});
