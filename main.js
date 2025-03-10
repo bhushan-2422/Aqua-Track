@@ -15,7 +15,6 @@ document.querySelector('.pipelines').addEventListener('click', function(event) {
     pipelinesLink.classList.toggle('active');
 });
 
-
 // Calculate Life of Pipe
 function getLife(pipe) {
     const manufactureDate = new Date(pipe.getAttribute('data-manufacture-date'));
@@ -31,7 +30,7 @@ function getLife(pipe) {
 // Calculate Thickness
 function getThickness(pipe) {
     const width = pipe.offsetWidth;
-    return (width < 6) ? 5 : 1;
+    return (width < 6) ? 3 : 1;
 }
 
 // Calculate Number of Joints
@@ -41,24 +40,32 @@ function getJoints(pipe) {
 
 // Check if in Farmland
 function isInFarmland(pipe) {
-    return pipe.classList.contains('farm') ? 5 : 0;
+    return pipe.classList.contains('farm') ? 3 : 0;
+}
+
+// Check if near a tank
+function isNearTank(pipe) {
+    return pipe.classList.contains('neartank') ? 3 : 0;
+}
+
+// Check if plastic
+function isPlastic(pipe) {
+    return pipe.classList.contains('plastic') ? 3 : 0;
 }
 
 // Apply Color Based on Condition
-function applyConditionColor(life, thickness, joints, farmland, pipe) {
-    const sum = life + thickness + joints + farmland;
+function applyConditionColor(life, thickness, joints, farmland, neartank, plastic, pipe) {
+    const sum = life + thickness + joints + farmland + neartank + plastic;
     
-    if (sum > 10) {
+    if (sum > 9) {
         pipe.style.backgroundColor = 'red';
     } 
-    else if (sum > 5 && sum < 10) {
+    else if (sum > 7 && sum <= 10) {
         pipe.style.backgroundColor = 'blue';
     } 
     else {
         pipe.style.backgroundColor = 'green';
     }
-
-
 }
 
 // Evaluate All Pipes
@@ -69,12 +76,15 @@ function evaluatePipes() {
         const thickness = getThickness(pipe);
         const joints = getJoints(pipe);
         const farmland = isInFarmland(pipe);
+        const neartank = isNearTank(pipe);
+        const plastic = isPlastic(pipe);
 
-        applyConditionColor(life, thickness, joints, farmland, pipe);
+        applyConditionColor(life, thickness, joints, farmland, neartank, plastic, pipe);
     });
 }
 
 evaluatePipes();
+
 
 // // Select all area classes from 1 to 10
 // for (let i = 1; i <= 10; i++) {
