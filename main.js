@@ -36,7 +36,14 @@ function getThickness(pipe) {
 
 // Calculate Number of Joints
 function getJoints(pipe) {
-    return pipe.textContent.length;
+    const classList = Array.from(pipe.classList);
+    const areaClass = classList.find(cls => cls.startsWith("area")); // Find class like "area1", "area2", etc.
+    
+    if (areaClass) {
+        return document.querySelectorAll(`.${areaClass}`).length; // Count all elements with the same area class
+    }
+    
+    return 0;
 }
 
 // Check if in Farmland
@@ -149,6 +156,7 @@ function updateLists() {
 
 // Call the function to update all lists
 updateLists();
+
 
 
 
