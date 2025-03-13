@@ -358,7 +358,170 @@ window.onload = function () {
         itemsArray.push(item.innerText);
     });
 
-    localStorage.setItem("listData", JSON.stringify(itemsArray));
+    localStorage.setItem("listData1", JSON.stringify(itemsArray));
     console.log("List saved to localStorage");
-};
 
+
+    //color
+    let area1 = document.querySelector(".area1");
+    if (area1) {
+      let color = window.getComputedStyle(area1).backgroundColor;
+      localStorage.setItem("savedColor1", color); // Store color in localStorage
+    }
+
+    //2
+    let listItems2 = document.querySelectorAll(".list2 li");
+    let itemsArray2 = [];
+
+    listItems2.forEach(item => {
+        itemsArray2.push(item.innerText);
+    });
+
+    localStorage.setItem("listData2", JSON.stringify(itemsArray2));
+    console.log("List saved to localStorage");
+
+    //color2
+
+    let area2 = document.querySelector(".area2");
+    if (area2) {
+      let color = window.getComputedStyle(area2).backgroundColor;
+      localStorage.setItem("savedColor2", color); // Store color in localStorage
+    }
+
+    //3
+    let listItems3 = document.querySelectorAll(".list3 li");
+    let itemsArray3 = [];
+
+    listItems3.forEach(item => {
+        itemsArray3.push(item.innerText);
+    });
+
+    localStorage.setItem("listData3", JSON.stringify(itemsArray3));
+    console.log("List saved to localStorage");
+    //color
+
+    let area3 = document.querySelector(".area3");
+    if (area3) {
+      let color = window.getComputedStyle(area3).backgroundColor;
+      localStorage.setItem("savedColor3", color); // Store color in localStorage
+    }
+
+    //4
+
+    let listItems4 = document.querySelectorAll(".list4 li");
+    let itemsArray4 = [];
+
+    listItems4.forEach(item => {
+        itemsArray4.push(item.innerText);
+    });
+
+    localStorage.setItem("listData4", JSON.stringify(itemsArray4));
+    console.log("List saved to localStorage");
+//color
+    let area4 = document.querySelector(".area4");
+    if (area4) {
+      let color = window.getComputedStyle(area4).backgroundColor;
+      localStorage.setItem("savedColor4", color); // Store color in localStorage
+    }
+
+    //5
+    let listItems5 = document.querySelectorAll(".list5 li");
+    let itemsArray5 = [];
+
+    listItems5.forEach(item => {
+        itemsArray5.push(item.innerText);
+    });
+
+    localStorage.setItem("listData5", JSON.stringify(itemsArray5));
+    console.log("List saved to localStorage");
+//color
+    let area5 = document.querySelector(".area5");
+    if (area5) {
+      let color = window.getComputedStyle(area5).backgroundColor;
+      localStorage.setItem("savedColor5", color); // Store color in localStorage
+    }
+
+    //6
+    let listItems6 = document.querySelectorAll(".list6 li");
+    let itemsArray6 = [];
+
+    listItems6.forEach(item => {
+        itemsArray6.push(item.innerText);
+    });
+
+    localStorage.setItem("listData6", JSON.stringify(itemsArray6));
+    console.log("List saved to localStorage");
+//color
+    let area6 = document.querySelector(".area6");
+    if (area6) {
+      let color = window.getComputedStyle(area6).backgroundColor;
+      localStorage.setItem("savedColor6", color); // Store color in localStorage
+    }
+
+    //7
+    let listItems7 = document.querySelectorAll(".list7 li");
+    let itemsArray7 = [];
+
+    listItems7.forEach(item => {
+        itemsArray7.push(item.innerText);
+    });
+
+    localStorage.setItem("listData7", JSON.stringify(itemsArray7));
+    console.log("List saved to localStorage");
+//color
+    let area7 = document.querySelector(".area7");
+    if (area7) {
+      let color = window.getComputedStyle(area7).backgroundColor;
+      localStorage.setItem("savedColor7", color); // Store color in localStorage
+    }
+
+    //8
+    let listItems8 = document.querySelectorAll(".list8 li");
+    let itemsArray8 = [];
+    listItems8.forEach(item => {
+        itemsArray8.push(item.innerText);
+    });
+
+    localStorage.setItem("listData8", JSON.stringify(itemsArray8));
+    console.log("List saved to localStorage");
+//color
+    let area8 = document.querySelector(".area8");
+    if (area8) {
+      let color = window.getComputedStyle(area8).backgroundColor;
+      localStorage.setItem("savedColor8", color); // Store color in localStorage
+
+    }
+      //9
+      let listItems9 = document.querySelectorAll(".list9 li");
+      let itemsArray9 = [];
+  
+      listItems9.forEach(item => {
+          itemsArray9.push(item.innerText);
+      });
+  
+      localStorage.setItem("listData9", JSON.stringify(itemsArray9));
+      console.log("List saved to localStorage");
+  //color
+      let area9 = document.querySelector(".area9");
+      if (area9) {
+        let color = window.getComputedStyle(area9).backgroundColor;
+        localStorage.setItem("savedColor9", color); // Store color in localStorage
+      }
+
+      //10
+      let listItems10 = document.querySelectorAll(".list10 li");
+    let itemsArray10 = [];
+
+    listItems10.forEach(item => {
+        itemsArray10.push(item.innerText);
+    });
+
+    localStorage.setItem("listData10", JSON.stringify(itemsArray10));
+    console.log("List saved to localStorage");
+//color
+    let area10 = document.querySelector(".area10");
+    if (area10) {
+      let color = window.getComputedStyle(area10).backgroundColor;
+      localStorage.setItem("savedColor10", color); // Store color in localStorage
+    }
+}
